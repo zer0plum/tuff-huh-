@@ -1,103 +1,11 @@
+
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <style>
-        body {
-            margin: 0;
-            overflow: hidden; /* Hide scrollbars if background is too large */
-            height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            font-family: 'Press Start 2P', cursive; /* A pixel-art font for Minecraft feel */
-            color: #fff;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
-            cursor: none; /* Hide default cursor */
-
-            /* Minecraft Oak Plank Background (initially dark) */
-            background-image: url('https://github.com/zer0plum/tuff-huh-/blob/527b2176494841443c70f8a8f70327e1c2629d95/oak%20plank.jpg'); /* Replace with your desired Minecraft oak plank image URL */
-            background-size: repeat; /* Repeat the texture */
-            background-color: #000; /* Fallback for background */
-
-            /* Initially dark overlay/filter */
-            filter: brightness(0.1); /* Makes the whole page very dark */
-            transition: filter 1s ease-in-out; /* Smooth transition for brightness */
-        }
-        body.active {
-            filter: brightness(1); /* Fully bright when active */
-        }
-
-        h1 {
-            z-index: 1; /* Keep text above the dark overlay initially */
-            text-align: center;
-            opacity: 1;
-            transition: opacity 0.5s ease-out;
-            padding: 20px;
-            background-color: rgba(0, 0, 0, 0.5);
-            border-radius: 10px;
-        }
-
-        body.active h1 {
-            opacity: 0;
-            pointer-events: none; /* Make text unclickable once hidden */
-        }
-
-        .glowing-cursor {
-            position: absolute;
-            width: 200px; /* Size of the glow */
-            height: 200px;
-            border-radius: 50%;
-            background: radial-gradient(circle, rgba(255, 255, 255, 0.3) 0%, rgba(255, 255, 255, 0) 70%);
-            transform: translate(-50%, -50%); /* Center the glow on the cursor */
-            pointer-events: none; /* Allow clicks/interaction through the glow */
-            mix-blend-mode: screen; /* Blends the glow nicely with the background */
-            opacity: 0; /* Initially hidden */
-            transition: opacity 0.3s ease-in-out;
-            z-index: 2; /* Ensure glow is above background and text */
-        }
-
-        body.active .glowing-cursor {
-            opacity: 1; /* Visible when active */
-        }
-    </style>
+<html>
 </head>
 <body>
-    <div class="glowing-cursor"></div>
 
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const body = document.body;
-            const glowingCursor = document.querySelector('.glowing-cursor');
-            const introText = document.querySelector('h1');
-            let isActive = false;
 
-            // Function to handle the initial click
-            function activatePage() {
-                if (!isActive) {
-                    body.classList.add('active');
-                    isActive = true;
-                    // Remove the initial click listener after activation
-                    document.removeEventListener('click', activatePage);
-                    // Optional: Hide the intro text after a delay
-                    setTimeout(() => {
-                        introText.style.display = 'none';
-                    }, 1000); // Matches the filter transition time
-                }
-            }
+    <img src="https://github.com/zer0plum/I-m-so-tuff/blob/1c5c70d058e570f7d669f61f72f4641cbaf67f5c/oak%20plank.jpg">
 
-            // Add initial click listener
-            document.addEventListener('click', activatePage);
-
-            // Mousemove to position the glowing cursor
-            document.addEventListener('mousemove', (e) => {
-                if (isActive) {
-                    glowingCursor.style.left = `${e.clientX}px`;
-                    glowingCursor.style.top = `${e.clientY}px`;
-                }
-            });
-        });
-    </script>
 </body>
 </html>
