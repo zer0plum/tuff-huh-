@@ -3,33 +3,36 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fullscreen Image</title>
     <style>
         body, html {
             margin: 0;
             padding: 0;
             height: 100%;
             width: 100%;
-            overflow: hidden; /* This prevents scrollbars from showing */
-            background-image: url('https://github.com/zer0plum/tuff-huh-/blob/main/oak%20plank.jpg?raw=true');
-            background-size: cover; /* This makes the image cover the entire body */
-            background-position: center; /* This centers the image */
-            background-repeat: no-repeat; /* This prevents the image from repeating */
-            background-attachment: fixed; /* This keeps the image in place if you were to scroll */
+            overflow: hidden;
+            /* Use the corrected raw image URL */
+            background-image: url('https://github.com/zer0plum/tuff-huh-/raw/main/oak%20plank.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
         }
 
-        /* You can add a container for your content on top of the image */
         .content {
             position: relative;
             z-index: 1;
             padding: 20px;
-            color: white; /* Choose a color that stands out against the image */
-            text-shadow: 2px 2px 4px #000000; /* Adds a shadow for better readability */
+            color: white;
+            text-shadow: 2px 2px 4px #000000;
             text-align: center;
         }
     </style>
 </head>
 <body>
     <div class="content">
+        <h1>Welcome!</h1>
+        <p>This is a fullscreen background image.</p>
     </div>
 </body>
 </html>
