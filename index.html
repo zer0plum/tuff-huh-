@@ -1,10 +1,35 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            width: 100%;
+            overflow: hidden; /* This prevents scrollbars from showing */
+            background-image: url('https://github.com/zer0plum/tuff-huh-/blob/main/oak%20plank.jpg?raw=true');
+            background-size: cover; /* This makes the image cover the entire body */
+            background-position: center; /* This centers the image */
+            background-repeat: no-repeat; /* This prevents the image from repeating */
+            background-attachment: fixed; /* This keeps the image in place if you were to scroll */
+        }
+
+        /* You can add a container for your content on top of the image */
+        .content {
+            position: relative;
+            z-index: 1;
+            padding: 20px;
+            color: white; /* Choose a color that stands out against the image */
+            text-shadow: 2px 2px 4px #000000; /* Adds a shadow for better readability */
+            text-align: center;
+        }
+    </style>
 </head>
 <body>
-
-    <img src="https://raw.githubusercontent.com/zer0plum/tuff-huh-/main/oak%20plank.jpg" alt="A texture of an oak wood plank">
-
+    <div class="content">
+    </div>
 </body>
 </html>
